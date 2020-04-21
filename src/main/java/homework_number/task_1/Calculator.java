@@ -40,29 +40,20 @@ public class Calculator {
 
     System.out.println ("+\n-\n*\nn Возведение в степень\nfa Факториал\nfi Фибаначи");
 
-    switch (sc.next ()) {
+
+
+    switch (sc.next()) {
       case "+":
-        if (num.getIntNumOne() != 0 && num.getIntNumTwo() != 0) {
-          System.out.println(addition.calcAddition(num.getIntNumOne(), num.getIntNumTwo()));
-        } else {
-            System.out.println(addition.calcAddition(num.getDoubleNumOne(), num.getDoubleNumTwo()));
-        }
+        System.out.println ("Результат сложения: ");
+        System.out.println (addition.calcAddition (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
         break;
       case "-":
         System.out.println ("Результат вычитания: ");
-        if (num.getIntNumOne () != 0 && num.getIntNumTwo () != 0) {
-          System.out.println (subtraction.calcSubtraction (num.getIntNumOne (), num.getIntNumTwo ()));
-        } else {
-          System.out.println (subtraction.calcSubtraction (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
-        }
+        System.out.println (subtraction.calcSubtraction (num.getIntNumOne (), num.getIntNumTwo ()));
         break;
       case "*":
         System.out.println ("Результат умножения: ");
-        if (num.getIntNumOne () != 0 && num.getIntNumTwo () != 0) {
-          System.out.println (multiplication.calcMultiplication (num.getIntNumOne (), num.getIntNumTwo ()));
-        } else {
-          System.out.println (multiplication.calcMultiplication (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
-        }
+        System.out.println (multiplication.calcMultiplication (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
         break;
       case "n":
         System.out.println ("Результат возвездение в степень: ");
