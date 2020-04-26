@@ -20,7 +20,7 @@ public class Calculator {
     Addition addition = new Addition ();
     Subtraction subtraction = new Subtraction ();
     Multiplication multiplication = new Multiplication ();
-    Exponentiation exponentiation = new Exponentiation ();
+    Degree degree = new Degree ();
     Factorial factorial = new Factorial ();
     Fibonacci fibonacci = new Fibonacci ();
 
@@ -45,7 +45,7 @@ public class Calculator {
     switch (sc.next()) {
       case "+":
         System.out.println ("Результат сложения: ");
-        System.out.println (addition.calcAddition (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
+        System.out.println (addition.fold (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
         break;
       case "-":
         System.out.println ("Результат вычитания: ");
@@ -53,30 +53,32 @@ public class Calculator {
         break;
       case "*":
         System.out.println ("Результат умножения: ");
-        System.out.println (multiplication.calcMultiplication (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
+        System.out.println (multiplication.multiplication (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
         break;
       case "n":
         System.out.println ("Результат возвездение в степень: ");
         if (num.getIntNumOne () != 0 && num.getIntNumTwo () != 0) {
-          System.out.println (exponentiation.calcExponentiation (num.getIntNumOne ()));
-          System.out.println (exponentiation.calcExponentiation (num.getIntNumTwo ()));
+          System.out.println (degree.erect (num.getIntNumOne ()));
+          System.out.println (degree.erectTwo (num.getIntNumTwo ()));
         } else {
-          System.out.println (exponentiation.calcExponentiation (num.getDoubleNumOne ()));
-          System.out.println (exponentiation.calcExponentiation (num.getDoubleNumTwo ()));
+          if (num.getDoubleNumOne () != 0.0 && num.getDoubleNumTwo () != 0.0) {
+            System.out.println (Degree.erect (num.getDoubleNumOne ()));
+            System.out.println (Degree.erectTwo (num.getDoubleNumTwo ()));
+          }
         }
         break;
       case "fa":
         System.out.println ("Результат факториала числа: ");
         if (num.getIntNumOne () != 0 && num.getIntNumTwo () != 0) {
-          System.out.println (factorial.calcFactorial (num.getIntNumOne ()));
-          System.out.println (factorial.calcFactorialTwo (num.getIntNumTwo ()));
+          System.out.println (factorial.compute (num.getIntNumOne ()));
+          System.out.println (factorial.computeTwo (num.getIntNumTwo ()));
         }
         break;
       case "fi":
         System.out.println ("Результат Фиабонначи: ");
         if (num.getIntNumOne () != 0 && num.getIntNumTwo () != 0) {
-          System.out.println (fibonacci.calcFibonacci (num.getIntNumOne ()));
-          System.out.println (fibonacci.calcFibonacciTwo (num.getIntNumTwo ()));
+          System.out.println (fibonacci.compute (num.getIntNumOne ()));
+          System.out.println (fibonacci.computeTwo (num.getIntNumTwo ()));
         }
         break;
     }

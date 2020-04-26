@@ -1,7 +1,7 @@
 package homework_number.task_1;
 
 public class Fibonacci {
-  public int calcFibonacci(int numOne) {
+  public int compute(int numOne) {
     int n0 = 1;
     int n1 = 1;
     int n2 = 0;
@@ -18,7 +18,7 @@ public class Fibonacci {
   }
 
 
-  public int calcFibonacciTwo(int numTwo) {
+  public int computeTwo(int numTwo) {
     int n0 = 1;
     int n1 = 1;
     int n2 = 0;

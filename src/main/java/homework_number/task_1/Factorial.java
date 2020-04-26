@@ -1,7 +1,7 @@
 package homework_number.task_1;
 
 public class Factorial {
-  public int calcFactorial(int numOne){
+  public int compute(int numOne){
     int Factor = 1;
     for (int i = 1; i <=numOne; i ++){
       Factor = Factor*i;
@@ -9,7 +9,7 @@ public class Factorial {
     return Factor;
   }
 
-  public int calcFactorialTwo(int numTwo){
+  public int computeTwo(int numTwo){
     int Factor = 1;
     for (int i = 1; i <=numTwo; i ++){
       Factor = Factor*i;
