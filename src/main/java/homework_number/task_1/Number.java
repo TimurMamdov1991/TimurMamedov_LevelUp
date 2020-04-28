@@ -2,10 +2,12 @@ package homework_number.task_1;
 
 public class Number {
 
+
   private int intNumOne;
   private int intNumTwo;
   private double doubleNumOne;
   private double doubleNumTwo;
+  private int power;
 
   public void setNumOne(int intNumOne) {
 
@@ -28,20 +30,35 @@ public class Number {
   }
 
 
+  public void setPower(int power) {
+
+    this.power = power;
+  }
+
   public int getIntNumOne() {
+
     return intNumOne;
   }
 
   public int getIntNumTwo() {
+
     return intNumTwo;
   }
 
   public double getDoubleNumOne() {
+
     return doubleNumOne;
   }
 
   public double getDoubleNumTwo() {
+
     return doubleNumTwo;
+  }
+
+
+  public int getPower() {
+
+    return power;
   }
 
 }
