@@ -1,33 +1,61 @@
 package homework_number.task_2;
 
-import homework_number.task_2.Aircraft.*;
+import homework_number.task_2.Aircraft.Aircraft;
+import homework_number.task_2.Aircraft.Cargo.CargoAirPlane;
+import homework_number.task_2.Aircraft.Cargo.CargoGyrocopterPlane;
+import homework_number.task_2.Aircraft.Cargo.CargoHelicopterPlan;
+import homework_number.task_2.Aircraft.Cargo.CargoPlane;
+import homework_number.task_2.Aircraft.Passenger.PassengerAirPlane;
+import homework_number.task_2.Aircraft.Passenger.PassengerHelicopterPlane;
+import homework_number.task_2.Aircraft.Passenger.PassengerPlane;
+
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class Airline {
   public static void main (String[] args) {
+
+
+    CargoPlane T1 = new CargoAirPlane ("T1", 5000,4000);
+    CargoPlane T2 = new CargoAirPlane("T2", 10000, 8000);
+
+    CargoPlane Mi_171A2 = new CargoHelicopterPlan ("Mi_171A2", 2500, 2000);
+    CargoPlane Mi_38 = new CargoHelicopterPlan ("Mi_38",3500, 1000);
+
+    CargoPlane Syma_X8_Pro = new CargoGyrocopterPlane("Syma_X8_Pro", 250, 3);
+    CargoPlane Syma_Z3 = new CargoGyrocopterPlane("Syma_Z3", 150, 1);
+
+
+    PassengerPlane A_320 = new PassengerAirPlane ("Пассажирский самолет 1", 2500,750, 250000);
+    PassengerPlane Boeing747 = new PassengerAirPlane("Пассажирский самолет 2", 6000, 800, 500000);
+
+    PassengerPlane Ka_62 = new PassengerHelicopterPlane ("Ka_62", 1000, 6, 250);
+    PassengerPlane Ka_63 = new PassengerHelicopterPlane("Ka_63", 1500, 8, 300);
+
+
+
+    List<PassengerPlane> passengerAirPark;
+    passengerAirPark = Arrays.asList(Ka_62,Ka_63,A_320,Boeing747);
+
+    List<CargoPlane> cargoAirPark;
+    cargoAirPark = Arrays.asList(T1,T2,Mi_171A2,Mi_38,Syma_X8_Pro,Syma_Z3);
+
     List<Aircraft> airline = new ArrayList<> ();
+
 
     Scanner in = new Scanner(System.in);
 
     double lowRange;
     double highRange;
 
-    airline.add(new A_320 ("a_320", 5554, 22,2200));
-    airline.add(new A_330("a_330", 4444, 28,2440));
-    airline.add(new Boeing747("b747", 3333, 648, 12500));
-    airline.add(new Ka_62 ("Ka_62", 2222, 22,202));
-    airline.add(new  Mi_38 ("Mi_38", 1111, 22,220));
-    airline.add(new  Mi_171A2 ("Mi_171A2", 111, 22,292));
-    airline.add(new Syma_X8_Pro("Syma_X8_Pro", 213, 68));
-    airline.add(new Syma_Z3("Syma_Z3", 164, 648));
 
-
-    System.out.println (airline);
+    System.out.println (passengerAirPark);
+    System.out.println (cargoAirPark);
     System.out.println ();
-    System.out.println("Общая вместительность экипажей  " + countRoominess(airline) + " человек, и общая грузоподьемность " + countCargo(airline) + "кг.");
+    System.out.println("Общая вместительность экипажей  " + countRoominess(passengerAirPark) + " человек, и общая грузоподьемность " + countCargo(cargoAirPark) + "кг.");
     System.out.println();
     System.out.println("Введите минимальную дистанцию:");
     lowRange = in.nextDouble();
@@ -36,17 +64,17 @@ public class Airline {
     System.out.println(getAircraftRange (airline, lowRange, highRange));
   }
 
-  public static double countRoominess(List<Aircraft> airline) {
+  public static double countRoominess(List<PassengerPlane> passengerAirPark) {
     double roominess = 0.0;
-    for (Aircraft item : airline) {
+    for (Aircraft item : passengerAirPark) {
       roominess += item.getRoominess();
     }
     return roominess;
   }
 
-  public static double countCargo(List<Aircraft> airline) {
+  public static double countCargo(List<CargoPlane> cargoAirPark) {
     double cargo = 0.0;
-    for (Aircraft item : airline) {
+    for (Aircraft item : cargoAirPark) {
       cargo += item.getCargo ();
     }
     return cargo;
