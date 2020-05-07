@@ -44,7 +44,16 @@ public class Airline {
     cargoAirPark = Arrays.asList(T1,T2,Mi_171A2,Mi_38,Syma_X8_Pro,Syma_Z3);
 
     List<Aircraft> airline = new ArrayList<> ();
-
+    airline.add(T1);
+    airline.add(T2);
+    airline.add(Mi_171A2);
+    airline.add(Mi_38);
+    airline.add(Syma_X8_Pro);
+    airline.add(Syma_Z3);
+    airline.add(A_320);
+    airline.add(Boeing747);
+    airline.add(Ka_62);
+    airline.add(Ka_63);
 
     Scanner in = new Scanner(System.in);
 
