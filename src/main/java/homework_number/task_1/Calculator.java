@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Calculator {
 
-  public static Scanner sc = new Scanner (System.in).useLocale (Locale.US);
+  public static Scanner sc = new Scanner (System.in).useLocale(Locale.US);
 
   public static void main(String[] args) {
 
@@ -20,7 +20,7 @@ public class Calculator {
     Addition addition = new Addition ();
     Subtraction subtraction = new Subtraction ();
     Multiplication multiplication = new Multiplication ();
-    Power pow = new Power ();
+    Exponentiation exponentiation = new Exponentiation ();
     Factorial factorial = new Factorial ();
     Fibonacci fibonacci = new Fibonacci ();
 
@@ -41,10 +41,11 @@ public class Calculator {
     System.out.println ("+\n-\n*\nn Возведение в степень\nfa Факториал\nfi Фибаначи");
 
 
-    switch (sc.next ()) {
+
+    switch (sc.next()) {
       case "+":
         System.out.println ("Результат сложения: ");
-        System.out.println (addition.fold (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
+        System.out.println (addition.calcAddition (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
         break;
       case "-":
         System.out.println ("Результат вычитания: ");
@@ -52,37 +53,32 @@ public class Calculator {
         break;
       case "*":
         System.out.println ("Результат умножения: ");
-        System.out.println (multiplication.multiplication (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
+        System.out.println (multiplication.calcMultiplication (num.getDoubleNumOne (), num.getDoubleNumTwo ()));
         break;
       case "n":
-        System.out.println ("Введите степень:");
-        num.setPower(sc.nextInt());
-        if (num.getIntNumOne() != 0 && num.getIntNumTwo() != 0) {
-          System.out.println(pow.calcPower(num.getIntNumOne(), num.getPower()));
-          System.out.println(pow.calcPower(num.getIntNumTwo(), num.getPower()));
+        System.out.println ("Результат возвездение в степень: ");
+        if (num.getIntNumOne () != 0 && num.getIntNumTwo () != 0) {
+          System.out.println (exponentiation.calcExponentiation (num.getIntNumOne ()));
+          System.out.println (exponentiation.calcExponentiation (num.getIntNumTwo ()));
         } else {
-          if (num.getDoubleNumOne() != 0.0 && num.getDoubleNumTwo() != 0.0) {
-            System.out.println(pow.calcPower(num.getDoubleNumOne(), num.getPower()));
-            System.out.println(pow.calcPower(num.getDoubleNumTwo(), num.getPower()));
-          }
+          System.out.println (exponentiation.calcExponentiation (num.getDoubleNumOne ()));
+          System.out.println (exponentiation.calcExponentiation (num.getDoubleNumTwo ()));
         }
-            break;
-            case "fa":
-              System.out.println ("Результат факториала числа: ");
-              if (num.getIntNumOne () != 0 && num.getIntNumTwo () != 0) {
-                System.out.println (factorial.compute (num.getIntNumOne ()));
-                System.out.println (factorial.computeTwo (num.getIntNumTwo ()));
-              }
-              break;
-            case "fi":
-              System.out.println ("Результат Фиабонначи: ");
-              if (num.getIntNumOne () != 0 && num.getIntNumTwo () != 0) {
-                System.out.println (fibonacci.compute (num.getIntNumOne ()));
-                System.out.println (fibonacci.computeTwo (num.getIntNumTwo ()));
-              }
-              break;
-          }
+        break;
+      case "fa":
+        System.out.println ("Результат факториала числа: ");
+        if (num.getIntNumOne () != 0 && num.getIntNumTwo () != 0) {
+          System.out.println (factorial.calcFactorial (num.getIntNumOne ()));
+          System.out.println (factorial.calcFactorialTwo (num.getIntNumTwo ()));
         }
+        break;
+      case "fi":
+        System.out.println ("Результат Фиабонначи: ");
+        if (num.getIntNumOne () != 0 && num.getIntNumTwo () != 0) {
+          System.out.println (fibonacci.calcFibonacci (num.getIntNumOne ()));
+          System.out.println (fibonacci.calcFibonacciTwo (num.getIntNumTwo ()));
+        }
+        break;
+    }
+  }
 }
-
-
