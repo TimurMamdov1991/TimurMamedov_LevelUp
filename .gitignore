@@ -1,5 +1,10 @@
-target/
+**/target
+**/idea
+**/*.iml
+**/out
+**/allure-report
+**/allure-results
 
-*.iml
-.idea
+
+
 etc.
