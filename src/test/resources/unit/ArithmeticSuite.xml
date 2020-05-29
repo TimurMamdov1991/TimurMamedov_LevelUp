@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ArithmeticTestSuite">
+    <test name="ArithmeticTests">
+        <classes>
+            <class name="homework_number.task_3.CalculatorFunction.Arithmetic.CalculatorMultiplyTest"/>
+            <class name="homework_number.task_3.CalculatorFunction.Arithmetic.CalculatorSumTest"/>
+            <class name="homework_number.task_3.CalculatorFunction.Arithmetic.CalculatorSubstractTest"/>
+            <class name="homework_number.task_3.CalculatorFunction.Arithmetic.CalculatorPowTest"/>
+            <class name="homework_number.task_3.CalculatorFunction.Arithmetic.CalculatorDivTest"/>
+            <class name="homework_number.task_3.CalculatorFunction.Arithmetic.CalculatorSqrtTest"/>
+        </classes>
+    </test>
+</suite>
