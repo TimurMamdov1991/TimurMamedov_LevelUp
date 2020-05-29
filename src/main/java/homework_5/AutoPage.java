@@ -35,7 +35,9 @@ public class AutoPage extends BasePage {
   @FindBy(id = "PH_logoutLink")
   private WebElement logout;
 
+
   public void logout() {
     logout.click();
+    System.out.println ("Досвидули");
   }
 }

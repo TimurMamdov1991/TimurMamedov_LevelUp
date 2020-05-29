@@ -151,7 +151,7 @@ public class BaseMailPage extends BasePage {
   }
 
   public void assertMail() {
-    assertEquals (driver.findElement (By.xpath ("//span[@class='ll-crpt']")).getText (), "Test2020 Test2020");
+    assertEquals (driver.findElement (By.xpath ("//span[@class='ll-crpt']")).getText (), "test2020_test2020@mail.ru");
     System.out.println ("Проверка на письмо");
   }
 
