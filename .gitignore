@@ -1,10 +1,9 @@
+**/.idea
 **/target
-**/idea
 **/*.iml
 **/out
-**/allure-report
 **/allure-results
-
-
-
+**/allure-report
+**/.allure
+ajcore.*
 etc.
